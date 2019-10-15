@@ -14,8 +14,9 @@
         <module>browser</module>
         <module>demo</module>
     </modules>
+
     <properties>
-        <imooc.security.version>1.0.0-SNAPSHOT</imooc.security.version>
+        <ztian.security.version>1.0-SNAPSHOT</ztian.security.version>
     </properties>
 
     <dependencyManagement>

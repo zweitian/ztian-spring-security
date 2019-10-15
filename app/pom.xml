@@ -11,5 +11,12 @@
 
     <artifactId>app</artifactId>
 
+    <dependencies>
+        <dependency>
+            <artifactId>core</artifactId>
+            <groupId>com.ztian.security</groupId>
+            <version>${ztian.security.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

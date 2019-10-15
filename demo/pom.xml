@@ -8,8 +8,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>demo</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.ztian.security</groupId>
+            <artifactId>brower</artifactId>
+            <version>${ztian.security.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
