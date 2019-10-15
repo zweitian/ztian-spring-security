@@ -27,6 +27,7 @@ public class UserControllerTest {
 	public void getHelloTest() throws Exception {
 		String contentAsString = mockMvc.perform(MockMvcRequestBuilders.get("/hello"))
 				.andExpect(MockMvcResultMatchers.status().isOk())
+				//.andExpect(MockMvcResultMatchers.jsonPath("$.length").value(3))
 				.andReturn().getResponse().getContentAsString();
 		System.out.println(contentAsString);
 	}
