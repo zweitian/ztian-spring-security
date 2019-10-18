@@ -55,4 +55,11 @@ public class UserControllerTest {
 				.andReturn().getResponse().getContentAsString();
 		log.info("{}", contentAsString);
 	}
+
+	@Test
+	public void deleteByIdTest() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.delete("/user/4396")
+				.contentType(MediaType.APPLICATION_JSON_UTF8))
+				.andExpect(MockMvcResultMatchers.status().isOk());
+	}
 }

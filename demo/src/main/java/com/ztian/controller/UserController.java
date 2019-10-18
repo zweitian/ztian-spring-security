@@ -40,7 +40,7 @@ public class UserController {
 	 * 只有@Valid直接抛出异常
 	 * 同时存在@Valid 和 BindingResult bindingResult 则会进入请求方法
 	 */
-	@PostMapping("")
+	@PostMapping()
 	public User saveUser(@Valid @RequestBody User user, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
 			for (ObjectError objectError : bindingResult.getAllErrors()) {
@@ -49,5 +49,14 @@ public class UserController {
 		}
 		user.setId(1);
 		return user;
+	}
+
+	/**
+	 * 只有@Valid直接抛出异常
+	 * 同时存在@Valid 和 BindingResult bindingResult 则会进入请求方法
+	 */
+	@DeleteMapping("{id:\\d+}")
+	public void deleteById(@PathVariable("id") Integer id) {
+		log.info("{}删除成功", id);
 	}
 }
