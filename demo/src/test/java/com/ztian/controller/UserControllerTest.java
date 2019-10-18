@@ -42,7 +42,7 @@ public class UserControllerTest {
 		Date date = new Date();
 		mockMvc.perform(MockMvcRequestBuilders.post("/user")
 				.contentType(MediaType.APPLICATION_JSON_UTF8)
-				.content("{\"userName\":\"tian\",\"password\":\"123\",\"birthday\":" + date.getTime() + "}"))
+				.content("{\"userName\":\"tian\",\"password\":\"\",\"birthday\":" + date.getTime() + "}"))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1));
 	}

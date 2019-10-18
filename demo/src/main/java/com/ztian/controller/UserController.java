@@ -3,8 +3,12 @@ package com.ztian.controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.google.common.collect.Lists;
 import com.ztian.entity.User;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -15,6 +19,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/user")
+@Slf4j
 public class UserController {
 
 	@GetMapping
@@ -31,9 +36,18 @@ public class UserController {
 		return new User(id, "张三", "123", new Date(), LocalDateTime.now());
 	}
 
-
+	/**
+	 * 只有@Valid直接抛出异常
+	 * 同时存在@Valid 和 BindingResult bindingResult 则会进入请求方法
+	 */
 	@PostMapping("")
-	public User saveUser(@RequestBody User user) {
+	public User saveUser(@Valid @RequestBody User user, BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) ;
+		{
+			for (ObjectError objectError : bindingResult.getAllErrors()) {
+				log.warn("{}", objectError);
+			}
+		}
 		user.setId(1);
 		return user;
 	}

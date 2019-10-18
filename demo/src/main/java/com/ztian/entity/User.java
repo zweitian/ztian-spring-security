@@ -3,6 +3,7 @@ package com.ztian.entity;
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.hibernate.validator.constraints.NotBlank;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -24,6 +25,7 @@ public class User {
 	private String userName;
 
 	@JsonView(UserDetailView.class)
+	@NotBlank(message = "密码不能为空")
 	private String password;
 
 	@JsonView(UserSimpleView.class)
