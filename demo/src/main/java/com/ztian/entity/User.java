@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonView;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 /**
  * @author ztian
  * @date 2019/10/19
@@ -22,4 +25,10 @@ public class User {
 
 	@JsonView(UserDetailView.class)
 	private String password;
+
+	@JsonView(UserSimpleView.class)
+	private Date birthday;
+
+	@JsonView(UserSimpleView.class)
+	private LocalDateTime birthday2;
 }
