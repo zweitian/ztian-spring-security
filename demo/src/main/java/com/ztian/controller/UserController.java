@@ -42,8 +42,7 @@ public class UserController {
 	 */
 	@PostMapping("")
 	public User saveUser(@Valid @RequestBody User user, BindingResult bindingResult) {
-		if (bindingResult.hasErrors()) ;
-		{
+		if (bindingResult.hasErrors()) {
 			for (ObjectError objectError : bindingResult.getAllErrors()) {
 				log.warn("{}", objectError);
 			}
