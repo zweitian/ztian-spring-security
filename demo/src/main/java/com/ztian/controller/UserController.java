@@ -3,6 +3,7 @@ package com.ztian.controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.google.common.collect.Lists;
 import com.ztian.entity.User;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -32,6 +33,7 @@ public class UserController {
 
 	@GetMapping("{id:\\d+}")
 	@JsonView(User.UserDetailView.class)
+	@ApiOperation(value = "查询用户")
 	public User getUser(@PathVariable("id") Integer id) {
 		return new User(id, "张三", "123", new Date(), LocalDateTime.now());
 	}

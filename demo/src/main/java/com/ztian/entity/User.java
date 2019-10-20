@@ -1,6 +1,7 @@
 package com.ztian.entity;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.hibernate.validator.constraints.NotBlank;
@@ -22,6 +23,7 @@ public class User {
 	private Integer id;
 
 	@JsonView(UserSimpleView.class)
+	@ApiModelProperty(value = "用户名")
 	private String userName;
 
 	@JsonView(UserDetailView.class)
