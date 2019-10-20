@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.ztian.Filter;
+package com.ztian.filter;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -16,7 +16,7 @@ import java.util.Date;
 public class TimeFilter implements Filter {
 
 	/* (non-Javadoc)
-	 * @see javax.servlet.Filter#destroy()
+	 * @see javax.servlet.filter#destroy()
 	 */
 	@Override
 	public void destroy() {
@@ -24,7 +24,7 @@ public class TimeFilter implements Filter {
 	}
 
 	/* (non-Javadoc)
-	 * @see javax.servlet.Filter#doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain)
+	 * @see javax.servlet.filter#doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain)
 	 */
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -37,7 +37,7 @@ public class TimeFilter implements Filter {
 	}
 
 	/* (non-Javadoc)
-	 * @see javax.servlet.Filter#init(javax.servlet.FilterConfig)
+	 * @see javax.servlet.filter#init(javax.servlet.FilterConfig)
 	 */
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
