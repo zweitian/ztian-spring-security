@@ -4,7 +4,7 @@
 package com.ztian.interceptor;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,7 +19,7 @@ import java.util.Date;
  * 但无法获取方法实际传入参数
  */
 @Slf4j
-@ComponentScan
+@Component
 public class TimeInterceptor implements HandlerInterceptor {
 
 	/* (non-Javadoc)
