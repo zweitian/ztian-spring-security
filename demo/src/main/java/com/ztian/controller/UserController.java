@@ -59,4 +59,11 @@ public class UserController {
 	public void deleteById(@PathVariable("id") Integer id) {
 		log.info("{}删除成功", id);
 	}
+
+
+	@GetMapping("exception")
+	@JsonView(User.UserDetailView.class)
+	public User exception() {
+		throw new RuntimeException("异常测试");
+	}
 }
